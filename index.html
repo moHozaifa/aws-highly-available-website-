@@ -1,1 +1,68 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Highly Available Website on AWS</title>
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --card: #ffffff;
+      --text: #1b2430;
+      --muted: #5b6776;
+      --accent: #0b6e4f;
+      --border: #d9dee5;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #12171d;
+        --card: #1b232c;
+        --text: #e8edf2;
+        --muted: #9aa7b5;
+        --accent: #4fd1a1;
+        --border: #2d3844;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.6;
+    }
+    main {
+      width: 100%;
+      max-width: 560px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+    }
+    h1 { margin: 0 0 8px; font-size: 1.6rem; }
+    p { margin: 0 0 20px; color: var(--muted); }
+    .server {
+      border-left: 4px solid var(--accent);
+      padding: 12px 16px;
+      background: var(--bg);
+      border-radius: 0 8px 8px 0;
+      font-weight: 600;
+      word-break: break-word;
+    }
+    small { display: block; margin-top: 20px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Highly Available Website on AWS</h1>
+    <p>This page travels from an S3 bucket to EC2 instances in two Availability Zones, behind an Application Load Balancer.</p>
+    <div class="server">INSTANCE_INFO</div>
+    <small>Refresh the page. If the load balancer sends you to another server, the instance ID changes.</small>
+  </main>
+</body>
+</html>
